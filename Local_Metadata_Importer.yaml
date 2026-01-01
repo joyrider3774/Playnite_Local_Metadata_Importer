@@ -1,0 +1,8 @@
+AddonId: 'Local_Metadata_Importer_7fdd3f44-0209-49f3-a1f0-40297c22b8f2'
+Packages:
+  - Version: 1.0
+    RequiredApiVersion: 6.2.0
+    ReleaseDate: 2026-01-01
+    PackageUrl: https://github.com/joyrider3774/Playnite_Local_Metadata_Importer/releases/download/v1.0/Local_Metadata_Importer-v1.0.pext
+    Changelog:
+      - Initial Release

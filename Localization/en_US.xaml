@@ -1,0 +1,24 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- settings screen -->
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_GenericSettings">Generic Settings</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_Match">Match using game name then rom Name instead of first rom name then game name</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_Select">Select</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ExcludedPlatforms">Excluded Platforms:</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ExcludedSources">Excluded Sources:</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_PlatformSettings">Platform Import Folder Settings</sys:String>
+
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColPlatform">Platform</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColIcons">Icons</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColCovers">Covers</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColBackgrounds">Backgrounds</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColLogos">Logos</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ColVideos">Videos</sys:String>
+
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_Import">Import:</sys:String>
+    
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ButAddPage">Add Page</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ButDelPage">Del Page</sys:String>
+</ResourceDictionary>
