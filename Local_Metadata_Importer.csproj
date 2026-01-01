@@ -51,7 +51,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Converters.cs" />
     <Compile Include="Local_Metadata_Importer.cs" />
     <Compile Include="Local_Metadata_ImporterSettings.cs" />
     <Compile Include="Local_Metadata_ImporterSettingsView.xaml.cs">
