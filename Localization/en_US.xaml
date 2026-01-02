@@ -21,4 +21,21 @@
     
     <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ButAddPage">Add Page</sys:String>
     <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ButDelPage">Del Page</sys:String>
+
+    <!-- plugin menus -->
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_MenuAllGames">Import for all games</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_MenuFilteredGames">Import for filtered games</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_MenuSelectedGames">Import for selected games</sys:String>
+
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportAll">All</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportIcons">Icons</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportCovers">Covers</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportBackgrounds">Backgrounds</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportLogos">Logos</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportVideos">Videos</sys:String>
+    
+    <!-- progress message -->
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportingForGame">Importing for game</sys:String>
+    <sys:String x:Key="LOC_LOCALMETADATAIMPORTER_ImportingForGameOf">of</sys:String>
+    
 </ResourceDictionary>

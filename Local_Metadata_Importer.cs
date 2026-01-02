@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Xml.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using HtmlExporterPlugin;
 
 namespace Local_Metadata_Importer_plugin
 {
@@ -73,7 +74,7 @@ namespace Local_Metadata_Importer_plugin
 
                         gameNr++;
                         progressAction.CurrentProgressValue = gameNr;
-                        progressAction.Text = "Importing for game " + progressAction.CurrentProgressValue.ToString() + " of " + progressAction.ProgressMaxValue.ToString() + ": " + game.Name;
+                        progressAction.Text = Constants.ImportingForGameText + " " + progressAction.CurrentProgressValue.ToString() + " " + Constants.ImportingForGameOfText + " " + progressAction.ProgressMaxValue.ToString() + ": " + game.Name;
                         if (progressAction.CancelToken.IsCancellationRequested)
                         {
                             break;
@@ -223,9 +224,9 @@ namespace Local_Metadata_Importer_plugin
             List<MainMenuItem> MainMenuItems = new List<MainMenuItem>
             {
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|All",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportAllText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), true, true, true, true, true);
@@ -233,9 +234,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|All",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportAllText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), true, true, true, true, true);
@@ -243,9 +244,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|All",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportAllText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), true, true, true, true, true);
@@ -253,9 +254,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Icons",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportIconsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), true, false, false, false, false);
@@ -263,9 +264,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Icons",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportIconsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), true, false, false, false, false);
@@ -273,9 +274,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Icons",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportIconsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), true, false, false, false, false);
@@ -284,9 +285,9 @@ namespace Local_Metadata_Importer_plugin
 
 
                  new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Covers",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportCoversText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), false, true, false, false, false);
@@ -294,9 +295,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Covers",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportCoversText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), false, true, false, false, false);
@@ -304,9 +305,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Covers",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportCoversText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), false, true, false, false, false);
@@ -315,9 +316,9 @@ namespace Local_Metadata_Importer_plugin
 
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Backgrounds",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportBackgroundsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), false, false, true, false, false);
@@ -325,9 +326,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Backgrounds",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportBackgroundsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), false, false, true, false, false);
@@ -335,9 +336,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Backgrounds",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportBackgroundsText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), false, false, true, false, false);
@@ -346,9 +347,9 @@ namespace Local_Metadata_Importer_plugin
 
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Logos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportLogosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), false, false, false, true, false);
@@ -356,9 +357,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Logos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportLogosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), false, false, false, true, false);
@@ -366,9 +367,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Logos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportLogosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), false, false, false, true, false);
@@ -378,9 +379,9 @@ namespace Local_Metadata_Importer_plugin
 
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Videos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportVideosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for all games",
+                    Description = Constants.MenuAllGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.Database.Games.ToList(), false, false, false, false, true);
@@ -388,9 +389,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Videos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportVideosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for filtered games",
+                    Description = Constants.MenuFilteredGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.FilteredGames.ToList(), false, false, false, false, true);
@@ -398,9 +399,9 @@ namespace Local_Metadata_Importer_plugin
                 },
 
                 new MainMenuItem{
-                    MenuSection = "@Local Metadata Importer|Videos",
+                    MenuSection = "@" + Constants.AppName + "|" + Constants.ImportVideosText,
                     Icon = Path.Combine(pluginFolder, "icon.png"),
-                    Description = "Import for selected games",
+                    Description = Constants.MenuSelectedGamesText,
                     Action = (MainMenuItem) =>
                     {
                         DoImport(PlayniteApi.MainView.SelectedGames.ToList(), false, false, false, false, true);
