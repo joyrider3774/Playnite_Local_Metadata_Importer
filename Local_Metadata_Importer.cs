@@ -111,26 +111,32 @@ namespace Local_Metadata_Importer_plugin
                                             names.Add(Path.ChangeExtension(game.Name, ".jpg"));
                                             names.Add(Path.ChangeExtension(game.Name, ".jpeg"));
                                             names.Add(Path.ChangeExtension(game.Name, ".ico"));
-                                            foreach (GameRom rom in game.Roms)
+                                            if (game.Roms != null)
                                             {
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".png"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".gif"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".bmp"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpg"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpeg"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".ico"));
+                                                foreach (GameRom rom in game.Roms)
+                                                {
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".png"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".gif"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".bmp"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpg"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpeg"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".ico"));
+                                                }
                                             }
                                         }
                                         else
                                         {
-                                            foreach (GameRom rom in game.Roms)
+                                            if (game.Roms != null)
                                             {
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".png"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".gif"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".bmp"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpg"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpeg"));
-                                                names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".ico"));
+                                                foreach (GameRom rom in game.Roms)
+                                                {
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".png"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".gif"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".bmp"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpg"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".jpeg"));
+                                                    names.Add(Path.ChangeExtension(Path.GetFileName(rom.Path), ".ico"));
+                                                }
                                             }
                                             names.Add(Path.ChangeExtension(game.Name, ".png"));
                                             names.Add(Path.ChangeExtension(game.Name, ".gif"));
